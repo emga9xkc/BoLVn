@@ -7,10 +7,10 @@ function OnLoad()
     ToUpdate.VersionPath = "/emga9xkc/BoLVn/master/AutoBotLV30.ver"
     ToUpdate.ScriptPath =  "/emga9xkc/BoLVn/master/AutoBotLV30.lua"
     ToUpdate.SavePath = SCRIPT_PATH.."/AutoBotLV30.lua"
-    ToUpdate.CallbackUpdate = function(NewVersion,OldVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Updated to "..NewVersion..". </b></font>") end
-    ToUpdate.CallbackNoUpdate = function(OldVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">No Updates Found</b></font>") end
-    ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">New Version found ("..NewVersion.."). Please wait until its downloaded</b></font>") end
-    ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>SxOrbWalk: </b></font> <font color=\"#FFDFBF\">Error while Downloading. Please try again.</b></font>") end
+    ToUpdate.CallbackUpdate = function(NewVersion,OldVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Download thành công phiên bản "..NewVersion..". Ấn F9 2 lần để load lại script </b></font>") end
+    ToUpdate.CallbackNoUpdate = function(OldVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Đây là phiên bản mới nhất không cần update</b></font>") end
+    ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Đang download phiên bản ("..NewVersion.."). Vui lòng chờ...</b></font>") end
+    ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Download lỗi. Vui lòng thử lại sau</b></font>") end
     ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
 end
 
@@ -70,7 +70,7 @@ function OffDraw()
 end
 
 function OnDraw()
-  DrawText("Auto Find LoL VN Lv30 "..Version.." By BoL Studio VN Crack",20,400,10,0xF9FF3300)
+  DrawText("Auto Find LoL VN Lv30 ver "..Version.." By BoL Studio VN Crack",20,400,10,0xF9FF3300)
 	DrawText("Home: http://gg.gg/bolvn2016",20,400,30,0xF9FF3300)
 end
 
