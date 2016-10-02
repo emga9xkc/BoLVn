@@ -34,6 +34,7 @@ function veNhaKhiHetMau()
 			iChatBve = true
 			end
 		else
+			if not FileExist(LIB_PATH.."Au3Info.exe") then return end
 			lastHit()
 			autoLevel()
 			autoMuaDo()
