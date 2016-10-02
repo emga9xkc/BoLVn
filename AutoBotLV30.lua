@@ -161,6 +161,40 @@ function autoCombo()
 			CastSpell(_R, ts.target.x,ts.target.z)
 			end
 		end
+	elseif player.charName == "Ahri" then
+		ts = TargetSelector(TARGET_PRIORITY,550)
+		ts:update()
+		if (ts.target ~= nil) then
+			myHero:Attack(ts.target)
+		end
+		ts = TargetSelector(TARGET_PRIORITY,650)
+		ts:update()
+		if (ts.target ~= nil) then
+			if (myHero:CanUseSpell(_Q) == READY) then
+				CastSpell(_Q, ts.target.x,ts.target.z)
+			end
+		end
+		ts = TargetSelector(TARGET_PRIORITY,550)
+		ts:update()
+		if (ts.target ~= nil) then
+			if (myHero:CanUseSpell(_W) == READY) then
+				CastSpell(_W, ts.target)
+			end
+		end
+		ts = TargetSelector(TARGET_PRIORITY,600)
+		ts:update()
+		if (ts.target ~= nil) then
+			if (myHero:CanUseSpell(_E) == READY) then
+				CastSpell(_E, ts.target.x,ts.target.z)
+			end
+		end
+		ts = TargetSelector(TARGET_PRIORITY,600)
+		ts:update()
+		if (ts.target ~= nil) then
+			if (myHero:CanUseSpell(_R) == READY) then
+			CastSpell(_R, ts.target.x,ts.target.z)
+			end
+		end
 	else
 		ts = TargetSelector(TARGET_PRIORITY,myHero.range)
 		ts:update()
