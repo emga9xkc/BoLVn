@@ -1,18 +1,4 @@
-Version = 1.1
-function OnLoad()
-    local ToUpdate = {}
-    ToUpdate.Version = Version
-    ToUpdate.UseHttps = true
-    ToUpdate.Host = "raw.githubusercontent.com"
-    ToUpdate.VersionPath = "/emga9xkc/BoLVn/master/AutoBotLV30.ver"
-    ToUpdate.ScriptPath =  "/emga9xkc/BoLVn/master/AutoBotLV30.lua"
-    ToUpdate.SavePath = SCRIPT_PATH.."/AutoBotLV30.lua"
-    ToUpdate.CallbackUpdate = function(NewVersion,OldVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Download thành công phiên bản "..NewVersion..". Ấn F9 2 lần để load lại script </b></font>") end
-    ToUpdate.CallbackNoUpdate = function(OldVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Đây là phiên bản mới nhất không cần update</b></font>") end
-    ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Đang download phiên bản ("..NewVersion.."). Vui lòng chờ...</b></font>") end
-    ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Download lỗi. Vui lòng thử lại sau</b></font>") end
-    ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
-end
+
 
 player = GetMyHero()
 function OnTick()
@@ -33,7 +19,7 @@ function veNhaKhiHetMau()
 			iVeNha = iVeNha + 1
 			if dangBienVe == false then
 				if iChatBve == true then
-					SendChat("Gần hết máu, đang chạy ra Baron rồi B về")
+					print("Gần hết máu, đang chạy ra Baron rồi B về")
 					iChatBve = false
 				end
 			myHero:MoveTo(4600,9626)
@@ -220,7 +206,7 @@ function autoTheoSau()
 	if Hero.dead == true or Hero.name == "Disabled member" then
 			i = 0
 			if Hero.charName ~= myHero.charName then
-				SendChat(Hero.charName.." Đã Chết!!")
+				print(Hero.charName.." Đã Chết!!")
 			end
 			if sttHero < 4 then
 				chat = true
@@ -230,7 +216,7 @@ function autoTheoSau()
 			end
 		else
 			if chat == true then
-			SendChat("Đang Đi Theo "..Hero.name)
+			print("Đang Đi Theo "..Hero.name)
 			end
 			x1 = Hero.x
 			y1 = Hero.z
@@ -247,7 +233,7 @@ function autoTheoSau()
 		myHero:MoveTo(x2,y2)
 		i = 0
 		if x2 == x1 and y2 == y1 then
-			SendChat(Hero.charName.." Đứng Yên Khá Lâu, Thay Đổi Tướng")
+			print(Hero.charName.." Đứng Yên Khá Lâu, Thay Đổi Tướng")
 			if sttHero < 4 then
 				chat = true
 				sttHero = sttHero + 1
@@ -549,16 +535,25 @@ autochati = 0
 function AutoChat()
 autochati = autochati + 1
 if autochati%5000 == 0 then
-SendChat("Auto Treo Nick Lên Lv30 Tại: http://gg.gg/bolvn2016")
+print("Auto Treo Nick Lên Lv30 Tại: http://gg.gg/bolvn2016")
 end
 end
 
-
-
-
-
-
-
+Version = 1.1
+function OnLoad()
+    local ToUpdate = {}
+    ToUpdate.Version = Version
+    ToUpdate.UseHttps = true
+    ToUpdate.Host = "raw.githubusercontent.com"
+    ToUpdate.VersionPath = "/emga9xkc/BoLVn/master/AutoBotLV30.ver"
+    ToUpdate.ScriptPath =  "/emga9xkc/BoLVn/master/AutoBotLV30.lua"
+    ToUpdate.SavePath = SCRIPT_PATH.."/AutoBotLV30.lua"
+    ToUpdate.CallbackUpdate = function(NewVersion,OldVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Download thành công phiên bản "..NewVersion..". Ấn F9 2 lần để load lại script </b></font>") end
+    ToUpdate.CallbackNoUpdate = function(OldVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Đây là phiên bản mới nhất không cần update</b></font>") end
+    ToUpdate.CallbackNewVersion = function(NewVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Đang download phiên bản ("..NewVersion.."). Vui lòng chờ...</b></font>") end
+    ToUpdate.CallbackError = function(NewVersion) print("<font color=\"#FF794C\"><b>Thông báo: </b></font> <font color=\"#FFDFBF\">Download lỗi. Vui lòng thử lại sau</b></font>") end
+    ScriptUpdate(ToUpdate.Version,ToUpdate.UseHttps, ToUpdate.Host, ToUpdate.VersionPath, ToUpdate.ScriptPath, ToUpdate.SavePath, ToUpdate.CallbackUpdate,ToUpdate.CallbackNoUpdate, ToUpdate.CallbackNewVersion,ToUpdate.CallbackError)
+end
 class "ScriptUpdate"
 function ScriptUpdate:__init(LocalVersion,UseHttps, Host, VersionPath, ScriptPath, SavePath, CallbackUpdate, CallbackNoUpdate, CallbackNewVersion,CallbackError)
     self.LocalVersion = LocalVersion
