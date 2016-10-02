@@ -1,6 +1,7 @@
+Version = 1.0.1
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1.0
+    ToUpdate.Version = Version
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/emga9xkc/BoLVn/master/AutoBotLV30.ver"
@@ -69,7 +70,7 @@ function OffDraw()
 end
 
 function OnDraw()
-  DrawText("Auto Find LoL VN Lv30 By BoL Studio VN Crack 1.4",20,400,10,0xF9FF3300)
+  DrawText("Auto Find LoL VN Lv30 "..Version.." By BoL Studio VN Crack",20,400,10,0xF9FF3300)
 	DrawText("Home: http://gg.gg/bolvn2016",20,400,30,0xF9FF3300)
 end
 
