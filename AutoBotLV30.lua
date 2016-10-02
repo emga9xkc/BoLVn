@@ -1,6 +1,6 @@
 function OnLoad()
     local ToUpdate = {}
-    ToUpdate.Version = 1.4
+    ToUpdate.Version = 1.0
     ToUpdate.UseHttps = true
     ToUpdate.Host = "raw.githubusercontent.com"
     ToUpdate.VersionPath = "/emga9xkc/BoLVn/master/AutoBotLV30.ver"
@@ -204,11 +204,6 @@ function autoCombo()
 		end
 	end
 end
-
-
-
-
-
 
 
 
